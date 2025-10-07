@@ -1,0 +1,80 @@
+F<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQs | Becky Frain Therapy</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a class="logo" href="index.html">Becky&nbsp;Frain&nbsp;Therapy</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰ Menu
+        </button>
+        <nav class="nav-links" role="navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="fee.html">Fee</a>
+          <a href="faqs.html" class="active">FAQs</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="section section-light">
+        <div class="container">
+          <h2>Frequently Asked Questions</h2>
+
+          <h3>What happens in a counselling session?</h3>
+          <p>Sessions provide a safe and confidential space for you to talk about your thoughts, feelings and experiences. I will listen, ask questions and help you explore what is happening for you. The goal is to help you gain insight and develop your own answers, rather than giving advice.</p>
+
+          <h3>How many sessions will I need?</h3>
+          <p>This varies for each person. Some people find a few sessions are enough, while others choose longer‑term therapy. We will regularly review your progress and decide together what feels right for you.</p>
+
+          <h3>Is counselling confidential?</h3>
+          <p>Everything you share with me is confidential. The only exceptions are if I believe there is a risk of serious harm to yourself or others, or if I am required to disclose information by law. I will explain confidentiality in more detail during our first session.</p>
+
+          <h3>What is integrative counselling?</h3>
+          <p>Integrative counselling is a flexible approach that combines techniques from different therapies such as person‑centred counselling, psychodynamic therapy and cognitive behavioural therapy (CBT). This means we can tailor therapy to suit your unique needs and goals.</p>
+
+          <h3>How do I book an appointment?</h3>
+          <p>You can get in touch using the contact page or by emailing <a href="mailto:contact@beckyfraintherapy.com">contact@beckyfraintherapy.com</a>. I offer a free 20‑minute consultation so we can discuss what you are looking for and see whether we might work well together.</p>
+        </div>
+      </section>
+
+      <!-- Call-to-action section on FAQs page -->
+      <section class="cta-section">
+        <h2>Still have questions?</h2>
+        <p>I’m happy to discuss any concerns you may have. Contact me to arrange a free initial consultation or to ask anything that isn’t covered here.</p>
+        <a href="contact.html" class="button">Get in touch</a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © 2025 Becky Frain Therapy. This website is for informational purposes only and does not provide medical or psychological advice.
+        </p>
+      </div>
+    </footer>
+    <!-- Navigation toggle script -->
+    <script>
+      const toggleButton = document.querySelector('.nav-toggle');
+      const headerEl = document.querySelector('header');
+      if (toggleButton && headerEl) {
+        toggleButton.addEventListener('click', () => {
+          const open = headerEl.classList.toggle('nav-open');
+          toggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggleButton.textContent = open ? '× Close' : '☰ Menu';
+        });
+      }
+    </script>
+  </body>
+</html>

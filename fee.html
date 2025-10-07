@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fee | Becky Frain Therapy</title>
+    <!-- Google Fonts for elegant typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a class="logo" href="index.html">Becky&nbsp;Frain&nbsp;Therapy</a>
+        <!-- Mobile menu button (hidden on large screens) -->
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰ Menu
+        </button>
+        <!-- Navigation links -->
+        <nav class="nav-links" role="navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="fee.html" class="active">Fee</a>
+          <a href="faqs.html">FAQs</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="section section-light">
+        <div class="container">
+          <h2>Fees</h2>
+          <p>Therapy is an investment in yourself and your wellbeing. My fees are:</p>
+          <ul>
+            <li>Initial consultation (20 minutes): <strong>Free</strong></li>
+            <li>Individual counselling session (50 minutes): <strong>£50</strong></li>
+          </ul>
+          <p>I offer a limited number of concessions for students and those on a low income – please enquire if this applies to you.</p>
+          <p>Sessions are usually weekly at an agreed time. Payment is required 24 hours in advance. Cancellations with less than 24 hours’ notice may be charged at the full session fee.</p>
+        </div>
+      </section>
+
+      <!-- Call-to-action section on Fee page -->
+      <section class="cta-section">
+        <h2>Ready to get started?</h2>
+        <p>If you’d like to learn more about how counselling can support you or discuss concessions, please feel free to get in touch.</p>
+        <a href="contact.html" class="button">Book your consultation</a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © 2025 Becky Frain Therapy. This website is for informational purposes only and does not provide medical or psychological advice.
+        </p>
+      </div>
+    </footer>
+    <!-- Navigation toggle script -->
+    <script>
+      const toggleButton = document.querySelector('.nav-toggle');
+      const headerEl = document.querySelector('header');
+      if (toggleButton && headerEl) {
+        toggleButton.addEventListener('click', () => {
+          const open = headerEl.classList.toggle('nav-open');
+          toggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggleButton.textContent = open ? '× Close' : '☰ Menu';
+        });
+      }
+    </script>
+  </body>
+</html>

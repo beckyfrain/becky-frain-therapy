@@ -1,0 +1,415 @@
+/* 
+ * Responsive stylesheet for Rebecca Frain Counselling website
+ *
+ * This stylesheet defines a calm and welcoming colour palette, fluid typography,
+ * and mobile-first layouts. It includes a responsive navigation toggle and 
+ * adaptive grids so the site looks great on phones, tablets and desktops.
+ */
+
+/* Colour and font variables for easy theming */
+:root {
+  --primary-color: #79a2cf;       /* used for headings and highlights */
+  --secondary-color: #f5f9fe;     /* light backgrounds */
+  --accent-color: #8ac6d1;        /* call‑to‑action buttons */
+  --text-color: #223;             /* dark grey for legible text */
+  --header-font: 'Lora', serif;   /* serif for headings */
+  --body-font: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Base resets and media defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  line-height: 1.6;
+  color: var(--text-color);
+  background: #f7f9fb;
+}
+
+/* Fluid typography using clamp() so type scales on small screens */
+h1 {
+  font-family: var(--header-font);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.2;
+}
+h2 {
+  font-family: var(--header-font);
+  font-weight: 700;
+  font-size: clamp(1.3rem, 3.2vw, 1.8rem);
+  line-height: 1.25;
+}
+p, li, label, input, textarea, button {
+  font-size: clamp(0.95rem, 2.6vw, 1.05rem);
+}
+
+/* Ensure media doesn't overflow containers */
+img, picture, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Generic container utility to constrain content width */
+.container {
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Header and navigation */
+header {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.navbar {
+  /* Flex layout for header items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  /* Horizontal padding and centring */
+  padding: 0.8rem 1rem;
+  width: min(1100px, 92vw);
+  margin-inline: auto;
+}
+.logo {
+  font-family: var(--header-font);
+  font-size: 1.7rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+/* Hover and active states for navigation links */
+.nav-links a:hover {
+  background: var(--secondary-color);
+}
+.nav-links a.active {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Mobile menu toggle button */
+.nav-toggle {
+  display: none;
+  border: 1px solid #d8e2ea;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem 0.65rem;
+  cursor: pointer;
+  font-size: 1rem;
+  /* Prevent the label inside the toggle from wrapping to a new line */
+  white-space: nowrap;
+    /* Ensure toggle stays above the slide-out menu on mobile */
+    z-index: 1000;
+}
+
+/* Hero section with overlay and centered content */
+.hero {
+  position: relative;
+  min-height: 56vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #fff;
+  background: #9fb6c2 url('images/hero.png') center/cover no-repeat;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.45));
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.hero p {
+  max-width: 55ch;
+  margin-inline: auto;
+  margin-bottom: 1.6rem;
+}
+.hero .button {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 0.75rem 1.3rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.hero .button:hover {
+  background-color: var(--primary-color);
+}
+
+/* Sections */
+section {
+  padding: clamp(1.5rem, 4vw, 3rem) 0;
+}
+section h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+section p {
+  margin-bottom: 1.25rem;
+}
+.section-light {
+  background-color: var(--secondary-color);
+}
+
+/* Card/grid layout for services or features */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.9rem, 2.5vw, 1.5rem);
+  margin-top: 1.5rem;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e6ecf2;
+  border-radius: 12px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+}
+.card h3 {
+  font-family: var(--header-font);
+  color: var(--primary-color);
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+/* Form styling (contact) */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+form input,
+form textarea {
+  border: 1px solid #d8e2ea;
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+  width: 100%;
+  max-width: 680px;
+}
+form button {
+  width: fit-content;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+form button:hover {
+  background: var(--primary-color);
+}
+
+/* Footer */
+.site-footer {
+  background-color: var(--secondary-color);
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  border-top: 1px solid #e0e6ef;
+}
+.site-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+.site-footer .container {
+  display: grid;
+  gap: 0.6rem;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+/* --- Tablet breakpoints --- */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav-links {
+    gap: 0.75rem;
+  }
+}
+
+/* --- Phone breakpoints --- */
+@media (max-width: 640px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .hero {
+    min-height: 48vh;
+    padding: 2.25rem 1rem;
+  }
+  .nav-links {
+    display: none;
+  }
+  .nav-toggle {
+    display: inline-flex;
+  }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+  section {
+    padding: 1.25rem 0;
+  }
+
+  /* Make the header navbar span the full viewport on small screens */
+  .navbar {
+    width: 100%;
+    margin-inline: 0;
+    padding: 0.8rem 1rem;
+    /* Align items to the start and reduce space between them */
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+
+  /* Place the menu toggle to the far left in the header */
+  .nav-toggle {
+    order: -1;
+    /* Do not allow the toggle to grow or shrink; keep it a fixed size */
+    flex: 0 0 auto;
+  }
+
+  /* Ensure the site logo adapts to the available space on mobile */
+  .logo {
+    /* Allow the logo to take up remaining space and wrap if necessary */
+    flex: 1 1 auto;
+    font-size: 1.4rem;
+    white-space: normal;
+  }
+
+  /* Side-drawer styling for the open mobile menu */
+  .nav-open .nav-links {
+    /* Display the hidden nav as a column when open */
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 75%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    padding: 4rem 1rem 1rem;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  /* Allow containers to span the full width on small screens */
+  .container {
+    width: 100%;
+    margin-inline: 0;
+    padding-inline: 1rem;
+  }
+}
+
+/* ----------------------------------------- */
+/* Additional components for engaging content */
+
+/* Benefits list: remove default bullets and add check marks */
+.benefits-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+.benefits-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+.benefits-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* Testimonial cards */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(0.9rem, 2.5vw, 1.5rem);
+  margin-top: 1.5rem;
+}
+.testimonial {
+  background: #fff;
+  border: 1px solid #e6ecf2;
+  border-radius: 12px;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  font-style: italic;
+}
+
+/* Call-to-action section */
+.cta-section {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: clamp(2rem, 6vw, 3rem) 1rem;
+}
+.cta-section h2 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #fff;
+}
+.cta-section p {
+  margin-bottom: 1.4rem;
+}
+.cta-section .button {
+  background-color: #fff;
+  color: var(--primary-color);
+  padding: 0.9rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+.cta-section .button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+/* When navigation is open on larger screens (>=641px) show links below header */
+@media (min-width: 641px) {
+  .nav-open .nav-links {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-top: 0.6rem;
+  }
+}

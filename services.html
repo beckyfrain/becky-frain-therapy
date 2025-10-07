@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Becky Frain Therapy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a class="logo" href="index.html">Becky&nbsp;Frain&nbsp;Therapy</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          ☰ Menu
+        </button>
+        <nav class="nav-links" role="navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="fee.html">Fee</a>
+          <a href="faqs.html">FAQs</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="section section-light">
+        <div class="container">
+          <h2>Counselling Services</h2>
+          <p>
+            I offer a range of counselling services designed to support you in a
+            way that fits your life. Sessions typically last around 50 minutes
+            and take place at a pace that feels right for you. We will work
+            collaboratively to understand your experiences and help you find a
+            path forward.
+          </p>
+        </div>
+      </section>
+
+      <!-- Individual counselling -->
+      <section class="section">
+        <div class="container">
+          <h2>Individual Counselling</h2>
+          <p>
+            One‑to‑one sessions provide a private space where you can explore
+            personal challenges, thoughts and emotions. Whether you’re feeling
+            overwhelmed by anxiety, coping with bereavement or wanting to
+            understand patterns in your relationships, individual counselling
+            offers a supportive environment to gain insight and develop coping
+            strategies.
+          </p>
+        </div>
+      </section>
+
+      <!-- Relationship counselling -->
+      <section class="section section-light">
+        <div class="container">
+          <h2>Relationship Counselling</h2>
+          <p>
+            Relationship or couples counselling helps partners work through
+            difficulties together. Sessions provide a neutral space to improve
+            communication, rebuild trust and understand each other’s needs more
+            clearly. I also offer family sessions to support healthy dynamics
+            and address conflicts.
+          </p>
+        </div>
+      </section>
+
+      <!-- Online and telephone counselling -->
+      <section class="section">
+        <div class="container">
+          <h2>Online & Telephone Counselling</h2>
+          <p>
+            For clients who prefer the flexibility of remote sessions or cannot
+            attend in person, I provide counselling via secure video call or
+            telephone. This can be particularly helpful if you have mobility
+            difficulties, live outside the Lymm area or simply want to engage in
+            therapy from the comfort of your home. Therapy can take place face to
+            face, online or over the telephone and may involve specific
+            exercises or more general discussions depending on your needs.
+          </p>
+        </div>
+      </section>
+
+      <!-- Call-to-action section on Services page -->
+      <section class="cta-section">
+        <h2>Find the right support for you</h2>
+        <p>Whether you’re interested in individual sessions, relationship counselling or online support, we can discuss what would work best for you. Book a free consultation to explore your options.</p>
+        <a href="contact.html" class="button">Get in touch</a>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © 2025 Becky Frain Therapy. This website is for informational
+          purposes only and does not provide medical or psychological advice.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Navigation toggle script -->
+    <script>
+      const toggleButton = document.querySelector('.nav-toggle');
+      const headerEl = document.querySelector('header');
+      if (toggleButton && headerEl) {
+        toggleButton.addEventListener('click', () => {
+          const open = headerEl.classList.toggle('nav-open');
+          toggleButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggleButton.textContent = open ? '× Close' : '☰ Menu';
+        });
+      }
+    </script>
+  </body>
+</html>
