@@ -118,8 +118,8 @@ header {
   font-size: 1rem;
   /* Prevent the label inside the toggle from wrapping to a new line */
   white-space: nowrap;
-    /* Ensure toggle stays above the slide-out menu on mobile */
-    z-index: 1000;
+  /* Ensure toggle stays above the slide-out menu on mobile */
+  z-index: 1000;
 }
 
 /* Hero section with overlay and centered content */
@@ -404,6 +404,7 @@ form button:hover {
   background-color: var(--secondary-color);
   color: var(--primary-color);
 }
+
 /* When navigation is open on larger screens (>=641px) show links below header */
 @media (min-width: 641px) {
   .nav-open .nav-links {
@@ -411,5 +412,20 @@ form button:hover {
     flex-direction: column;
     gap: 0.6rem;
     padding-top: 0.6rem;
+  }
+}
+
+/* Headshot helper */
+.headshot {
+  max-width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  margin: 0 0 1rem 1rem;
+  float: right;
+}
+@media (max-width: 640px) {
+  .headshot {
+    float: none;
+    margin: 0 auto 1rem;
   }
 }
